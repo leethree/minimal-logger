@@ -1,6 +1,6 @@
 {
   "name": "minimal-logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A minimal console logger",
   "main": "lib/index.js",
   "scripts": {
@@ -14,8 +14,8 @@
     "logging"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "git+https://github.com/leethree/minimal-logger.git"
+    "type": "git",
+    "url": "git+https://github.com/leethree/minimal-logger.git"
   },
   "author": "Sirui Li",
   "license": "MIT",
