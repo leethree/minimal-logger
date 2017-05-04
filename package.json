@@ -4,7 +4,7 @@
   "description": "A minimal console logger",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src -d lib && flow-copy-source -v src lib",
     "flow": "flow check",
     "prepublish": "npm run build"
   },
@@ -25,6 +25,7 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
-    "flow-bin": "^0.45.0"
+    "flow-bin": "^0.45.0",
+    "flow-copy-source": "^1.1.0"
   }
 }
