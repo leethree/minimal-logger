@@ -1,7 +1,7 @@
 {
-  "name": "react-native-log",
+  "name": "minimal-logger",
   "version": "0.1.0",
-  "description": "A minimal logger for React Native projects",
+  "description": "A minimal console logger",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib",
@@ -11,16 +11,15 @@
   "keywords": [
     "log",
     "logger",
-    "logging",
-    "react-native"
+    "logging"
   ],
   "repository": {
     "type" : "git",
-    "url" : "git+https://github.com/leethree/react-native-log.git"
+    "url" : "git+https://github.com/leethree/minimal-logger.git"
   },
   "author": "Sirui Li",
   "license": "MIT",
-  "homepage": "https://github.com/leethree/react-native-log",
+  "homepage": "https://github.com/leethree/minimal-logger",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.4.0",

@@ -1,6 +1,6 @@
-# react-native-log
+# minimal-logger
 
-A minimal logger for React Native
+A minimal logger for Node and React Native
 
 ### Features:
 
@@ -14,26 +14,26 @@ A minimal logger for React Native
 
 Install:
 ```
-yarn add react-native-log
+yarn add minimal-logger
 ```
 
 Default logger:
 ```js
-import logger from 'react-native-log';
+import logger from 'minimal-logger';
 
 logger.warn('something went wrong.');
 ```
 
 Named logger:
 ```js
-import { getLogger } from 'react-native-log';
+import { getLogger } from 'minimal-logger';
 
 getLogger('foo').warn('something went wrong.');
 ```
 
 Enable and disable logger:
 ```js
-import { getLogger } from 'react-native-log';
+import { getLogger } from 'minimal-logger';
 
 logger = getLogger('foo');
 logger.warn('something went wrong.');
