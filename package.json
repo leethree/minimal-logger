@@ -1,0 +1,17 @@
+{
+  "name": "react-native-log",
+  "version": "0.1.0",
+  "description": "A simple logger for React Native projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "logging",
+    "react-native"
+  ],
+  "author": "Sirui Li",
+  "license": "MIT"
+}
