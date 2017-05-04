@@ -1,10 +1,12 @@
 {
   "name": "react-native-log",
   "version": "0.1.0",
-  "description": "A simple logger for React Native projects",
-  "main": "index.js",
+  "description": "A minimal logger for React Native projects",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d lib",
+    "flow": "flow check",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "log",
@@ -12,6 +14,18 @@
     "logging",
     "react-native"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "git+https://github.com/leethree/react-native-log.git"
+  },
   "author": "Sirui Li",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leethree/react-native-log",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "flow-bin": "^0.45.0"
+  }
 }

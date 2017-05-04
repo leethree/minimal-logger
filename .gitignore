@@ -1,3 +1,6 @@
+# .gitignore - the files to not push via git
+lib
+
 # Logs
 logs
 *.log
