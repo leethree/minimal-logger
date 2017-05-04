@@ -1,8 +1,8 @@
 /* @flow */
 
-declare var __DEV__: boolean;
+declare var __DEV__: ?boolean;
 
-const isDebugEnabled = !!__DEV__;
+const isDev = typeof __DEV__ !== 'undefined' && !!__DEV__;
 
 type LogFn = (...data: Array<any>) => void;
 
@@ -29,11 +29,11 @@ const noopLogger = {
 
 const createLogger = (name: ?string): Logger => {
   const logFnWrapper = (func: Function): LogFn => (
-    name ? func.bind(console, name) : func.bind(console)
+    name ? func.bind(console, `[${name}]`) : func.bind(console)
   );
 
   const enabledLogger = {
-    debug: logFnWrapper(console.debug),
+    debug: logFnWrapper(console.debug || console.log),
     error: logFnWrapper(console.error),
     info: logFnWrapper(console.info),
     log: logFnWrapper(console.log),
@@ -42,7 +42,7 @@ const createLogger = (name: ?string): Logger => {
   };
 
   return {
-    ...isDebugEnabled ? enabledLogger : noopLogger,
+    ...isDev ? enabledLogger : noopLogger,
     setEnabled(enabled: boolean) {
       Object.assign(this, enabled ? enabledLogger : noopLogger);
       return this;
