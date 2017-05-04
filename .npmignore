@@ -1,0 +1,4 @@
+# .npmignore - the files to not published via npm
+src
+.babelrc
+.flowconfig

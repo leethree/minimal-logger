@@ -3,10 +3,6 @@
   "version": "0.1.2",
   "description": "A minimal console logger",
   "main": "lib/index.js",
-  "files": [
-    "lib",
-    "src"
-  ],
   "scripts": {
     "build": "babel src -d lib",
     "flow": "flow check",
