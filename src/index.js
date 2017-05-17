@@ -2,7 +2,16 @@
 
 declare var __DEV__: ?boolean;
 
-const isDev = typeof __DEV__ !== 'undefined' && !!__DEV__;
+const isDev = () => {
+  if (typeof __DEV__ !== 'undefined') {
+    return !!__DEV__;
+  } else if (process.env.NODE_ENV) {
+    return process.env.NODE_ENV === 'dev';
+  }
+  return true;
+};
+
+const enableByDefault = isDev();
 
 type LogFn = (...data: Array<any>) => void;
 
@@ -42,7 +51,7 @@ const createLogger = (prefix: ?string): Logger => {
   };
 
   return {
-    ...isDev ? enabledLogger : noopLogger,
+    ...enableByDefault ? enabledLogger : noopLogger,
     setEnabled(enabled: boolean) {
       Object.assign(this, enabled ? enabledLogger : noopLogger);
       return this;
