@@ -22,6 +22,9 @@ type Logger = {
   log: LogFn,
   trace: LogFn,
   warn: LogFn,
+  group: LogFn,
+  groupCollapsed: LogFn,
+  groupEnd: () => void,
   setEnabled: (enabled: boolean) => Logger;
 };
 
@@ -34,6 +37,9 @@ const noopLogger = {
   log: noopFn,
   trace: noopFn,
   warn: noopFn,
+  group: noopFn,
+  groupCollapsed: noopFn,
+  groupEnd: noopFn,
 };
 
 const createLogger = (prefix: ?string): Logger => {
@@ -48,6 +54,9 @@ const createLogger = (prefix: ?string): Logger => {
     log: logFnWrapper(console.log),
     trace: logFnWrapper(console.trace),
     warn: logFnWrapper(console.warn),
+    group: logFnWrapper(console.group || console.log),
+    groupCollapsed: logFnWrapper(console.groupCollapsed || console.log),
+    groupEnd: logFnWrapper(console.groupEnd || noopFn),
   };
 
   return {
