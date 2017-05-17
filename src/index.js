@@ -27,9 +27,9 @@ const noopLogger = {
   warn: noopFn,
 };
 
-const createLogger = (name: ?string): Logger => {
+const createLogger = (prefix: ?string): Logger => {
   const logFnWrapper = (func: Function): LogFn => (
-    name ? func.bind(console, `[${name}]`) : func.bind(console)
+    prefix ? func.bind(console, prefix) : func.bind(console)
   );
 
   const enabledLogger = {
@@ -53,13 +53,13 @@ const createLogger = (name: ?string): Logger => {
 const loggerMap: Map<string, Logger> = new Map();
 const defaultLogger = createLogger();
 
-export const getLogger = (name: ?string = null): Logger => {
+export const getLogger = (name: ?string = null, prefix: ?string): Logger => {
   if (!name) {
     return defaultLogger;
   }
   let logger = loggerMap.get(name);
   if (!logger) {
-    logger = createLogger(name);
+    logger = createLogger(prefix !== undefined ? prefix : `[${name}]`);
     loggerMap.set(name, logger);
   }
   return logger;
