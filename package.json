@@ -6,14 +6,11 @@
   "scripts": {
     "build": "babel src -d lib && flow-copy-source -v src lib",
     "clean": "rm -rf lib && mkdir lib",
+    "test": "jest",
     "flow": "flow check",
     "prepublish": "yarn clean && yarn build"
   },
-  "keywords": [
-    "log",
-    "logger",
-    "logging"
-  ],
+  "keywords": ["log", "logger", "logging"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leethree/minimal-logger.git"
@@ -27,6 +24,12 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
     "flow-bin": "^0.55.0",
-    "flow-copy-source": "^1.2.1"
+    "flow-copy-source": "^1.2.1",
+    "jest": "^21.1.0"
+  },
+  "jest": {
+    "globals": {
+      "__DEV__": true
+    }
   }
 }
