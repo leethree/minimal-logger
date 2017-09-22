@@ -1,6 +1,6 @@
 {
   "name": "minimal-logger",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A minimal console logger",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "flow": "flow check",
     "prepublish": "yarn clean && yarn build"
   },
-  "keywords": ["log", "logger", "logging"],
+  "keywords": [
+    "log",
+    "logger",
+    "logging"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leethree/minimal-logger.git"
