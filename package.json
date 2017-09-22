@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib && flow-copy-source -v src lib",
+    "clean": "rm -rf lib && mkdir lib",
     "flow": "flow check",
-    "prepublish": "npm run build"
+    "prepublish": "yarn clean && yarn build"
   },
   "keywords": [
     "log",
