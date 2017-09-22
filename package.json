@@ -21,11 +21,11 @@
   "license": "MIT",
   "homepage": "https://github.com/leethree/minimal-logger",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.4.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
-    "flow-bin": "^0.45.0",
-    "flow-copy-source": "^1.1.0"
+    "flow-bin": "^0.55.0",
+    "flow-copy-source": "^1.2.1"
   }
 }
