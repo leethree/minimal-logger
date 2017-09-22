@@ -15,7 +15,7 @@ const enableByDefault = isDev();
 
 type LogFn = (...data: Array<any>) => void;
 
-type Logger = {
+type Console = {
   debug: LogFn,
   error: LogFn,
   info: LogFn,
@@ -25,12 +25,16 @@ type Logger = {
   group: LogFn,
   groupCollapsed: LogFn,
   groupEnd: () => void,
-  setEnabled: (enabled: boolean) => Logger;
+};
+
+type Logger = {
+  ...$Exact<Console>,
+  setEnabled: (enabled: boolean) => Logger,
 };
 
 const noopFn: LogFn = () => {};
 
-const noopLogger = {
+const noopLogger: Console = {
   debug: noopFn,
   error: noopFn,
   info: noopFn,
@@ -43,24 +47,23 @@ const noopLogger = {
 };
 
 const createLogger = (prefix: ?string): Logger => {
-  const logFnWrapper = (func: Function): LogFn => (
-    prefix ? func.bind(console, prefix) : func.bind(console)
-  );
+  const bindPrefix = (func: LogFn): LogFn =>
+    prefix ? func.bind(null, prefix) : func;
 
-  const enabledLogger = {
-    debug: logFnWrapper(console.debug || console.log),
-    error: logFnWrapper(console.error),
-    info: logFnWrapper(console.info),
-    log: logFnWrapper(console.log),
-    trace: logFnWrapper(console.trace),
-    warn: logFnWrapper(console.warn),
-    group: logFnWrapper(console.group || console.log),
-    groupCollapsed: logFnWrapper(console.groupCollapsed || console.log),
-    groupEnd: logFnWrapper(console.groupEnd || noopFn),
+  const enabledLogger: Console = {
+    debug: bindPrefix(console.debug || console.log),
+    error: bindPrefix(console.error),
+    info: bindPrefix(console.info),
+    log: bindPrefix(console.log),
+    trace: bindPrefix(console.trace),
+    warn: bindPrefix(console.warn),
+    group: bindPrefix(console.group || console.log),
+    groupCollapsed: bindPrefix(console.groupCollapsed || console.log),
+    groupEnd: bindPrefix(console.groupEnd || noopFn),
   };
 
   return {
-    ...enableByDefault ? enabledLogger : noopLogger,
+    ...(enableByDefault ? enabledLogger : noopLogger),
     setEnabled(enabled: boolean) {
       Object.assign(this, enabled ? enabledLogger : noopLogger);
       return this;
@@ -69,9 +72,9 @@ const createLogger = (prefix: ?string): Logger => {
 };
 
 const loggerMap: Map<string, Logger> = new Map();
-const defaultLogger = createLogger();
+const defaultLogger: Logger = createLogger();
 
-export const getLogger = (name: ?string = null, prefix: ?string): Logger => {
+export const getLogger = (name: ?string = null, prefix?: ?string): Logger => {
   if (!name) {
     return defaultLogger;
   }
