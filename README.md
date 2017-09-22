@@ -1,5 +1,8 @@
 # minimal-logger
 
+[![CircleCI](https://circleci.com/gh/leethree/minimal-logger.svg?style=shield)](https://circleci.com/gh/leethree/minimal-logger)
+[![npm version](https://badge.fury.io/js/minimal-logger.svg)](https://www.npmjs.com/package/minimal-logger)
+
 A minimal logger for Node and React Native
 
 ### Features:
