@@ -48,7 +48,7 @@ const noopLogger: Console = {
 
 const createLogger = (prefix: ?string): Logger => {
   const bindPrefix = (func: LogFn): LogFn =>
-    prefix ? func.bind(null, prefix) : func;
+    prefix ? func.bind(this, prefix) : func;
 
   const enabledLogger: Console = {
     debug: bindPrefix(console.debug || console.log),
