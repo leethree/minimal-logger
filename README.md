@@ -46,5 +46,5 @@ logger.warn('this line will be muted.');
 
 ### Notes
 
-- loggers will be disabled by default if `__DEV__` is `true`.
+- Loggers will be disabled by default if `__DEV__` is `false` or `NODE_ENV` is not `dev` or `development`.
 - Multiple calls to `getLogger()` with the same name will always return a reference to the same Logger object. Therefore if you disable it in one file, it will disable all references to the same Logger.
