@@ -6,7 +6,8 @@ const isDev = () => {
   if (typeof __DEV__ !== 'undefined') {
     return !!__DEV__;
   } else if (process.env.NODE_ENV) {
-    return process.env.NODE_ENV === 'dev';
+    return process.env.NODE_ENV === 'dev' ||
+           process.env.NODE_ENV === 'development';
   }
   return true;
 };
