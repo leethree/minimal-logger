@@ -28,7 +28,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "flow-bin": "^0.75.0",
     "flow-copy-source": "^2.0.0",
-    "jest": "^23.2.0",
+    "jest": "^24.8.0",
     "rimraf": "^2.6.2"
   },
   "jest": {
