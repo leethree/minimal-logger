@@ -7,7 +7,7 @@
     "build": "babel src -d lib && flow-copy-source -v src lib",
     "clean": "rimraf lib && mkdir lib",
     "test": "jest",
-    "prepare": "yarn clean && yarn build"
+    "prepublishOnly": "yarn clean && yarn build"
   },
   "keywords": [
     "log",
