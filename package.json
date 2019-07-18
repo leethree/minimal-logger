@@ -1,6 +1,6 @@
 {
   "name": "minimal-logger",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A minimal console logger",
   "main": "lib/index.js",
   "files": [
