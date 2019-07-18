@@ -1,7 +1,6 @@
 {
   "presets": [
-    "env",
-    "stage-3", 
-    "flow"
+    "@babel/preset-env",
+    "@babel/preset-flow"
   ]
 }
