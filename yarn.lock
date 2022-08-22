@@ -1841,10 +1841,10 @@ find-up@^4.0.0, find-up@^4.1.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-flow-bin@^0.122.0:
-  version "0.122.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.122.0.tgz#c723a2b33b1a70bd10204704ae1dc776d5d89d79"
-  integrity sha512-my8N5jgl/A+UVby9E7NDppHdhLgRbWgKbmFZSx2MSYMRh3d9YGnM2MM+wexpUpl0ftY1IM6ZcUwaAhrypLyvlA==
+flow-bin@^0.185.1:
+  version "0.185.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.185.1.tgz#dbd3728405ff5aefd147e6c30a27381e9926ffb1"
+  integrity sha512-TUDZmyXpyKZin3oYtPke1wS5mT2ErCXEPuPsX1s6GgWhP7H7Z/qj6pg7CPcCYt5yNn2Im6k5VWx6J7/5a2stXA==
 
 flow-copy-source@^2.0.7:
   version "2.0.9"
